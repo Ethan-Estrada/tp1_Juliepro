@@ -1,0 +1,6 @@
+# pack-refs with: peeled fully-peeled sorted 
+abc66fb6998f05e770111fec7e17916dec48db67 refs/heads/CreationInitiale
+330de8c30b54bec4086b3bd3cf09263363362f39 refs/heads/FCT_CustomersObjectives
+3df682ccb55754da87883eef3821d72510e9705e refs/heads/FCT_ScheduledSession
+44eb41da1517d714bd519e52cb38cda1d8803c6b refs/heads/FCT_TrainerSpeciality
+b770554b79a6f67e13ba6b2abaaf9567ac16eb75 refs/heads/main
