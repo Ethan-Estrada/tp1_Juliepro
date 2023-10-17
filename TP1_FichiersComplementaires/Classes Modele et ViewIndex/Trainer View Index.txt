@@ -1,0 +1,133 @@
+
+
+
+@model IEnumerable<JuliePro_DataModels.Entities.Trainer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speciality_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speciality_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+////////////////////////
+
+@model IEnumerable<JuliePro_DataModels.Entities.Trainer>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<div class="border p-4 bg-white">
+    <div class="row">
+        <div class="col-8">
+            <h2 class="text-info">The trainers</h2>
+        </div>
+        <div class=" col-2 text-right">
+            <a asp-action="" class="btn btn-info form-control"> Add a trainer </a>
+        </div>
+    </div>
+    <br />
+    <div>
+
+
+        <table class="table table-striped border">
+            <tr class="table-secondary">
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Speciality</th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model) {
+
+                <tr>
+                    <td>
+                        @item.FirstName
+                    </td>
+                    <td>
+                        @item.LastName
+                    </td>
+                    <td>
+                        @item.AuthorEmail
+                    </td>
+                    <td>
+                        @item.Speciality_Id
+                    </td>
+                    <td>
+                        <a class="btn btn-primary text-white" asp-action="Edit" asp-route-Id="@item.Id">
+                            Edit
+                        </a>
+                        <a class="btn btn-info text-white" asp-action="Details" asp-route-Id="@item.Id">
+                            Details
+                        </a>
+                        <a class="btn btn-danger text-white" asp-action="Delete" asp-route-Id="@item.Id">
+                            Delete
+                        </a>
+
+                    </td>
+                </tr>
+            }    
+        </table>
+    </div>
+</div>
+
